@@ -6,3 +6,4 @@ vault
 config.json
 curator.yml
 data
+/deploy/manifest.yaml
