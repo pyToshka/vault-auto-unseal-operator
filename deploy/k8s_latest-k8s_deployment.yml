@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vault-auto-unseal-operator
+spec:
+  replicas: 1  # do not change to >1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app:  vault-auto-unseal-operator
+  template:
+    metadata:
+      labels:
+        app: vault-auto-unseal-operator
+    spec:
+      serviceAccountName: vault-auto-unseal-operator
+      containers:
+        - name: operator
+          image: kennyopennix/vault-autounseal-operator
+          imagePullPolicy: Always

@@ -1,0 +1,12 @@
+apiVersion: vault.io/v1
+kind: unseal
+metadata:
+  name: vault-unseal
+spec:
+  auto-unseal-image: "kennyopennix/vault-autounseal"
+  namespace: "default"
+  vault-url: "http://docker.for.mac.host.internal:8200"
+  vault-secret-shares: "5"
+  vault-secret-threshold: "5"
+  vault-root-token: "vault-root-token"
+  vault-keys: "vault-keys"
