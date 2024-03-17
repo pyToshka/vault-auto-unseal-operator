@@ -1,4 +1,4 @@
-FROM python:3.12.0b1-alpine
+FROM python:3.13.0a5-alpine
 
 LABEL description="Kubernetes Vault auto unseal operator"
 
